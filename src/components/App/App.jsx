@@ -15,6 +15,7 @@ export default function App() {
   const [page, setPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
   const [modalImage, setModalImage] = useState(null);
+  const [perPage] = useState(12);
 
   useEffect(() => {
     if (searchQuery.trim() === '') {
@@ -24,7 +25,7 @@ export default function App() {
       try {
         setIsLoading(true);
         setIsError(false);
-        const data = await getPictures(searchQuery, page);
+        const data = await getPictures(searchQuery, page, perPage);
         setPictures(prevState => [...prevState, ...data]);
       } catch (error) {
         setIsError(true);
@@ -33,7 +34,7 @@ export default function App() {
       }
     }
     fetchPictures();
-  }, [page, searchQuery]);
+  }, [page, searchQuery, perPage]);
 
   const handleSearch = topic => {
     setSearchQuery(topic);

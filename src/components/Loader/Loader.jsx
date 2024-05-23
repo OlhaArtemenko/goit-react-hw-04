@@ -1,17 +1,14 @@
-import { Oval } from 'react-loader-spinner';
+import { InfinitySpin } from 'react-loader-spinner';
+import css from './Loader.module.css';
 
 export default function loader() {
   return (
-    <div>
-      <Oval
-        height={50}
-        width={50}
-        color="red"
+    <div className={css.loadbox}>
+      <InfinitySpin
+        width={200}
+        color="darkblue"
         visible={true}
-        ariaLabel="oval-loading"
-        secondaryColor="pink"
-        strokeWidth={2}
-        strokeWidthSecondary={2}
+        ariaLabel="infinity-spin-loading"
       />
     </div>
   );
