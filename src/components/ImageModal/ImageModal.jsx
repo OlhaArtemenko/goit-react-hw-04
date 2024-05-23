@@ -18,6 +18,7 @@ export default function ImageModal({ image, onClose }) {
           padding: '0',
           marginRight: '-50%',
           transform: 'translate(-50%, -50%)',
+          cursor: 'zoom-out',
         },
         overlay: {
           position: 'fixed',

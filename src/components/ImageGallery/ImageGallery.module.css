@@ -8,5 +8,6 @@
 }
 .item {
   flex-basis: calc((100% - 40px) / 4);
-  height: 300px;
+  height: 230px;
+  cursor: zoom-in;
 }
